@@ -1,0 +1,11 @@
+<h1>Todo List</h1>
+<p>Stuff that needs to get done soon.</p>
+
+<% @todos.each do |todo| %>
+  <li> <%= link_to todo.title, todo_path(todo.id) %></li>
+  <li> <%= link_to "Edit " + todo.title, edit_todo_path(todo[:id]) %> </li>
+<% end %>
+ </br>
+<%= link_to "New Todo Item", new_todo_path %> <!-- this new_todos_path was created by resources,
+
+check in documentation for path L8r, also link_to is a rail thing-->
